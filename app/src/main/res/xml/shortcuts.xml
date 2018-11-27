@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shortcuts xmlns:android="http://schemas.android.com/apk/res/android">
+    <shortcut
+        android:shortcutId="composesfsafsads"
+        android:enabled="true"
+        android:icon="@drawable/ccoo_icon_main"
+        android:shortcutShortLabel="@string/first"
+        android:shortcutLongLabel="@string/first"
+        android:shortcutDisabledMessage="@string/first">
+
+        <intent
+            android:action="android.intent.action.VIEW"
+            android:targetPackage="com.yhg.pickup"
+            android:targetClass="com.yhg.pickup.MainActivity" />
+        <categories android:name="android.shortcut.conversation" />
+    </shortcut>
+</shortcuts>

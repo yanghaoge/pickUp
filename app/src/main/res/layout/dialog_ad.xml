@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:id="@+id/content"
+    android:layout_height="wrap_content"
+    android:background="@color/transparent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/transparent">
+
+        <com.yhg.pickup.widght.RoundAngleFrameLayout
+            android:id="@+id/hi"
+            android:layout_width="270dp"
+            android:layout_height="395dp"
+            android:layout_centerInParent="true">
+
+            <android.support.v4.view.ViewPager
+                android:id="@+id/pager"
+                android:layout_width="270dp"
+                android:layout_height="395dp"
+                android:layout_centerInParent="true" />
+        </com.yhg.pickup.widght.RoundAngleFrameLayout>
+
+        <TextView
+            android:layout_width="50dp"
+            android:layout_height="110dp"
+            android:layout_above="@+id/hi"
+            android:layout_alignRight="@+id/hi"
+            android:layout_marginRight="22dp"
+            android:background="@drawable/close" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/hi"
+            android:layout_alignLeft="@+id/hi"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="10dp"
+            android:background="#80000000"
+            android:paddingTop="2dp"
+            android:paddingBottom="2dp"
+            android:paddingRight="5dp"
+            android:paddingLeft="5dp"
+            android:text="广告"
+            android:textColor="@color/white"
+            android:textSize="10dp" />
+
+        <LinearLayout
+            android:id="@+id/rounds"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/hi"
+            android:gravity="bottom"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="10dp"
+            android:orientation="horizontal">
+
+        </LinearLayout>
+
+    </RelativeLayout>
+</RelativeLayout>
