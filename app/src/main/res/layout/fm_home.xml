@@ -14,13 +14,13 @@
         app:tabTextColor="@color/color_333" />
 
     <TextView
-        android:visibility="gone"
         android:id="@+id/channel_mannager"
         android:layout_width="wrap_content"
         android:layout_height="@dimen/button_height"
         android:background="@color/color_pink"
         android:gravity="center"
         android:text="TextView"
+        android:visibility="visible"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 

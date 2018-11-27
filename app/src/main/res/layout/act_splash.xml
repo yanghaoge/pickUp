@@ -10,13 +10,17 @@
         android:layout_height="match_parent" />
 
     <TextView
-        android:id="@+id/adview_share"
+        android:id="@+id/jump"
+        android:layout_marginTop="15dp"
+        android:layout_marginRight="15dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="right|bottom"
-        android:layout_marginBottom="50dp"
+        android:layout_gravity="right|top"
         android:background="#80000000"
-        android:padding="15dp"
+        android:textColor="@color/white"
+        android:textSize="12dp"
+        android:text="跳过广告"
+        android:padding="5dp"
         android:visibility="gone"
         tools:ignore="ContentDescription" />
 

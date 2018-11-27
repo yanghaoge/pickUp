@@ -2,7 +2,6 @@ package com.yhg.pickup.me;
 
 import android.os.Bundle;
 import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -12,27 +11,30 @@ import android.view.ViewGroup;
 import com.yhg.pickup.R;
 import com.yhg.pickup.base.BaseFragment;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
+
 /**
  * Created by Administrator on 2018/10/15.
  */
 
 public class MeFm extends BaseFragment {
 
-    private LayoutInflater mInflater;
-    RecyclerView ry ;
+    @BindView(R.id.ry)
+    RecyclerView ry;
 
     @Override
-    public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        mInflater = LayoutInflater.from(mContext);
-        View view = mInflater.inflate(R.layout.fm_me, container, false);
-        ry= view.findViewById(R.id.ry);
-        initView(view);
-        initData();
-        return view;
+    public int getContentViewId() {
+        return R.layout.fm_me;
+    }
+
+    @Override
+    protected void initAllMembersView(Bundle savedInstanceState) {
+        initView();
     }
 
 
-    private void initView(View view) {
+    private void initView() {
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(mContext);
         linearLayoutManager.setOrientation(LinearLayoutManager.VERTICAL);
         ry.setLayoutManager(linearLayoutManager);
@@ -40,13 +42,8 @@ public class MeFm extends BaseFragment {
         ry.setAdapter(myAdapter);
     }
 
-    private void initData() {
 
-
-    }
-
-
-    private class MyAdapter extends  RecyclerView.Adapter<RecyclerView.ViewHolder>{
+    private class MyAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
         @NonNull
         @Override
@@ -65,10 +62,12 @@ public class MeFm extends BaseFragment {
         }
     }
 
-    class ViewHolder extends RecyclerView.ViewHolder{
+    class ViewHolder extends RecyclerView.ViewHolder {
+
 
         public ViewHolder(View itemView) {
             super(itemView);
+            ButterKnife.bind(this,itemView);
         }
     }
 }

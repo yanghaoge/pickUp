@@ -15,7 +15,7 @@
         android:supportsRtl="true">
 
         <activity
-            android:name=".splash.Splash"
+            android:name=".ad.AdActivity"
             android:theme="@style/Splash">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

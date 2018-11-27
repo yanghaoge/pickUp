@@ -31,12 +31,22 @@ public class NewsFm extends BaseFragment implements View.OnClickListener {
     private ArrayList<SpringAnimation> mLetterAnims2;
 
     @Override
+    public int getContentViewId() {
+        return 0;
+    }
+
+    @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         mInflater = LayoutInflater.from(mContext);
         View view = mInflater.inflate(R.layout.fm_me, container, false);
         initView(view);
         initData();
         return view;
+    }
+
+    @Override
+    protected void initAllMembersView(Bundle savedInstanceState) {
+
     }
 
     private void initData() {

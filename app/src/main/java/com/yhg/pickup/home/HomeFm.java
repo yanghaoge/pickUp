@@ -1,48 +1,52 @@
 package com.yhg.pickup.home;
 
 import android.os.Bundle;
-import android.support.annotation.Nullable;
-import android.view.LayoutInflater;
+import android.support.design.widget.TabLayout;
+import android.support.v4.view.ViewPager;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.facebook.drawee.view.SimpleDraweeView;
 import com.yhg.pickup.R;
 import com.yhg.pickup.base.BaseFragment;
 import com.yhg.pickup.channel.ChannelDialogFragment;
 import com.yhg.pickup.params.Parameter;
-import com.yhg.pickup.utils.NetUtils;
 
 import org.json.JSONObject;
 
+import butterknife.BindView;
+import butterknife.OnClick;
+
 
 /**
- * Created by Administrator on 2018/10/15.
+ *
+ * @author Administrator
+ * @date 2018/10/15
  */
 
-public class HomeFm extends BaseFragment implements View.OnClickListener {
+public class HomeFm extends BaseFragment {
 
-    private LayoutInflater mInflater;
-    private TextView mChannelMannager;
-    private int receiveType;
+    @BindView(R.id.article_reward_tablayout)
+    TabLayout articleRewardTablayout;
+    @BindView(R.id.channel_mannager)
+    TextView channelMannager;
+    @BindView(R.id.content)
+    ViewPager content;
+    @BindView(R.id.simpleDraweeView)
+    SimpleDraweeView simpleDraweeView;
 
     @Override
-    public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        mInflater = LayoutInflater.from(mContext);
-        View view = mInflater.inflate(R.layout.fm_home, container, false);
-        initView(view);
-        initData();
-        return view;
+    public int getContentViewId() {
+        return R.layout.fm_home;
     }
 
-    private void initData() {
-
-
+    @Override
+    protected void initAllMembersView(Bundle savedInstanceState) {
+        initView(mRootView);
     }
 
     private void initView(View view) {
-        mChannelMannager= view.findViewById(R.id.channel_mannager);
-        mChannelMannager.setOnClickListener(this);
+
         JSONObject jo = new JSONObject();
         try {
             jo.put("page", 1);
@@ -58,29 +62,23 @@ public class HomeFm extends BaseFragment implements View.OnClickListener {
         }
         String params = Parameter.createnewsParam("PHSocket_GetHeadShareInfo", jo);
 
-        NetUtils.post(this,params,new NetUtils.NetCallBack(){
-            @Override
-            public void succuss(String result) {
-
-            }
-
-            @Override
-            public void error(String result) {
-
-            }
-        });
+//        NetUtils.post(this, params, new NetUtils.NetCallBack() {
+//            @Override
+//            public void succuss(String result) {
+//
+//            }
+//
+//            @Override
+//            public void error(String result) {
+//
+//            }
+//        });
     }
 
-    @Override
-    public void onClick(View v) {
-        switch (v.getId()) {
-            case R.id.channel_mannager:
-                ChannelDialogFragment dialogFragment = ChannelDialogFragment.newInstance();
-                dialogFragment.show(getChildFragmentManager(), "CHANNEL");
-                break;
-                default:
-                    break;
-        }
-    }
 
+    @OnClick(R.id.channel_mannager)
+    public void onViewClicked() {
+        ChannelDialogFragment dialogFragment = ChannelDialogFragment.newInstance();
+        dialogFragment.show(getChildFragmentManager(), "CHANNEL");
+    }
 }

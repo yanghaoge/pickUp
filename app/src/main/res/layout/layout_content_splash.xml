@@ -2,13 +2,15 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#80000000"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/white"
     android:gravity="bottom"
     android:orientation="vertical"
     android:visibility="gone">
 
-    <ImageView
+    <com.facebook.drawee.view.SimpleDraweeView
         android:id="@+id/ad_view"
+        app:actualImageScaleType="fitStart"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 
@@ -16,11 +18,12 @@
         android:id="@+id/biz_ad_copyright_container"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#ff0000"
+        android:background="@color/white"
         android:gravity="bottom|center_horizontal">
 
         <ImageView
             android:id="@+id/biz_ad_img_slogan"
+            android:src="@drawable/icon_splash_bottom"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:scaleType="center" />

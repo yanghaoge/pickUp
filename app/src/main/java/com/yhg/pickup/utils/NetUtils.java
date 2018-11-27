@@ -5,10 +5,12 @@ import android.app.Application;
 import com.lzy.okgo.OkGo;
 import com.lzy.okgo.cache.CacheEntity;
 import com.lzy.okgo.cache.CacheMode;
+import com.lzy.okgo.callback.FileCallback;
 import com.lzy.okgo.callback.StringCallback;
 import com.lzy.okgo.model.Response;
 import com.yhg.pickup.common.Constans;
 
+import java.io.File;
 import java.util.concurrent.TimeUnit;
 
 import okhttp3.OkHttpClient;
@@ -46,6 +48,16 @@ public class NetUtils {
 
     public static void post(Object object, String params, NetCallBack callback) {
         OkGo.<String>post(Constans.NET_URL).tag(object).params("param", params).execute(callback);
+    }
+
+    /**
+     *  下载文件
+     * @param object
+     * @param url
+     * @param callback
+     */
+    public static void downFile(Object object, String url, FileCallback callback) {
+        OkGo.<File>get(url).tag(object).execute(callback);
     }
 
     public abstract static class NetCallBack extends StringCallback {
