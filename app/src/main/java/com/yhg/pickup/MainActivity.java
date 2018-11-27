@@ -11,8 +11,8 @@ import com.yhg.pickup.home.HomeFm;
 import com.yhg.pickup.manager.AppManager;
 
 /**
- *
- * @author Administrator
+ * 首页
+ * @author yhg
  * @date 2018/10/12
  */
 
