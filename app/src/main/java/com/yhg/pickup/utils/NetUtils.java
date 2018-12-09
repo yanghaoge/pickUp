@@ -1,6 +1,7 @@
 package com.yhg.pickup.utils;
 
 import android.app.Application;
+import android.view.View;
 
 import com.lzy.okgo.OkGo;
 import com.lzy.okgo.cache.CacheEntity;
@@ -9,6 +10,9 @@ import com.lzy.okgo.callback.FileCallback;
 import com.lzy.okgo.callback.StringCallback;
 import com.lzy.okgo.model.Response;
 import com.yhg.pickup.common.Constans;
+import com.yhg.pickup.params.Parameter;
+
+import org.json.JSONObject;
 
 import java.io.File;
 import java.util.concurrent.TimeUnit;
@@ -79,5 +83,35 @@ public class NetUtils {
 
       public abstract void succuss(String result);
       public abstract void error(String result);
+    }
+
+    private void initView(View view) {
+
+        JSONObject jo = new JSONObject();
+        try {
+            jo.put("page", 1);
+            jo.put("appid", 0);
+            jo.put("siteID", 920);
+            jo.put("userID", 0);
+            jo.put("pageSize", 16);
+
+            jo.put("operate", 1);
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        String params = Parameter.createnewsParam("PHSocket_GetHeadShareInfo", jo);
+
+//        NetUtils.post(this, params, new NetUtils.NetCallBack() {
+//            @Override
+//            public void succuss(String result) {
+//
+//            }
+//
+//            @Override
+//            public void error(String result) {
+//
+//            }
+//        });
     }
 }

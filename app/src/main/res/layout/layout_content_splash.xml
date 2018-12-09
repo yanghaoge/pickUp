@@ -6,7 +6,7 @@
     android:background="@color/white"
     android:gravity="bottom"
     android:orientation="vertical"
-    android:visibility="gone">
+    android:visibility="visible">
 
     <com.facebook.drawee.view.SimpleDraweeView
         android:id="@+id/ad_view"

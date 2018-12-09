@@ -4,6 +4,13 @@
     android:layout_height="match_parent"
     android:clipChildren="false">
 
+    <FrameLayout
+        android:id="@+id/content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/line">
+    </FrameLayout>
+
     <View
         android:id="@+id/line"
         android:layout_width="match_parent"
@@ -17,12 +24,4 @@
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_alignParentBottom="true" />
-
-    <FrameLayout
-        android:id="@+id/content"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_above="@+id/line">
-
-    </FrameLayout>
 </RelativeLayout>

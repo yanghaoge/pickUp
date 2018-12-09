@@ -2,20 +2,20 @@
 <resources>
     <string-array name="channel">
         <item>推荐</item>
-        <item>视频</item>
-        <item>热点</item>
-        <item>社会</item>
-        <item>娱乐</item>
-        <item>科技</item>
-        <item>汽车</item>
-        <item>体育</item>
-        <item>财经</item>
-        <item>军事</item>
-        <item>国际</item>
-        <item>时尚</item>
-        <item>游戏</item>
-        <item>旅游</item>
-        <item>历史</item>
+        <item>看周边</item>
+        <item>秀家乡</item>
+        <item>三农栏目</item>
+        <item>城缘相亲</item>
+        <item>汽车栏目</item>
+        <item>房产栏目</item>
+        <item>小视频</item>
+        <item>美女秀</item>
+        <item>闹闹圈</item>
+        <item>育儿栏目</item>
+        <item>美食栏目</item>
+        <item>找房子</item>
+        <item>二手</item>
+        <item>拼车</item>
         <item>探索</item>
         <item>美食</item>
         <item>育儿</item>
