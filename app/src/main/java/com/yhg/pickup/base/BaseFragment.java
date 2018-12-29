@@ -8,9 +8,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import butterknife.ButterKnife;
-import butterknife.Unbinder;
-
 /**
  *
  * @author Administrator
@@ -20,7 +17,7 @@ import butterknife.Unbinder;
 public abstract class BaseFragment extends Fragment {
     protected Context mContext;
     protected View mRootView;
-    private Unbinder bind;
+//    private Unbinder bind;
 
     @Override
     public void onAttach(Context context) {
@@ -34,7 +31,7 @@ public abstract class BaseFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         mRootView = inflater.inflate(getContentViewId(), container, false);
         //绑定framgent
-        bind = ButterKnife.bind(this, mRootView);
+//        bind = ButterKnife.bind(this, mRootView);
         initAllMembersView(savedInstanceState);
         return mRootView;
     }
@@ -48,7 +45,7 @@ public abstract class BaseFragment extends Fragment {
     @Override
     public void onDestroyView() {
         super.onDestroyView();
-        bind.unbind();
+//        bind.unbind();
     }
 
 

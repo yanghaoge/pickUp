@@ -7,8 +7,8 @@ import android.view.View;
 import android.widget.Toast;
 
 import com.yhg.pickup.base.BaseActivity;
-import com.yhg.pickup.home.HomeFm;
 import com.yhg.pickup.manager.AppManager;
+import com.yhg.pickup.news.NewsFm;
 
 /**
  * 首页
@@ -40,7 +40,7 @@ public class MainActivity  extends BaseActivity implements View.OnClickListener 
         edit.setOnClickListener(this);
         msg.setOnClickListener(this);
         me .setOnClickListener(this);
-        HomeFm mMeFm = new HomeFm();
+        NewsFm mMeFm = new NewsFm();
         getSupportFragmentManager().beginTransaction().replace(R.id.content, mMeFm).commit();
     }
 

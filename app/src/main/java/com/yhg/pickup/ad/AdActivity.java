@@ -4,7 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 
-import com.yhg.pickup.MainActivity;
+import com.yhg.pickup.LiziActivity;
 import com.yhg.pickup.R;
 import com.yhg.pickup.base.BaseActivity;
 import com.yhg.pickup.manager.AdManager;
@@ -35,7 +35,7 @@ public class AdActivity extends BaseActivity {
         if (AdManager.isHaveSplashAd()) {
 
         } else {
-            startActivity(new Intent(this, MainActivity.class));
+            startActivity(new Intent(this, LiziActivity.class));
             new Handler().postDelayed(new Runnable() {
                 @Override
                 public void run() {

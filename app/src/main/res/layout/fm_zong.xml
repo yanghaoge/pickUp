@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="我是标题" />
+
+    <android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/main_content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/title">
+
+
+        <android.support.design.widget.AppBarLayout
+            android:id="@+id/appbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:elevation="0dp">
+
+            <android.support.design.widget.CollapsingToolbarLayout
+                android:id="@+id/collapsing_toolbar_layout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:expandedTitleMarginStart="0dp"
+                app:layout_scrollFlags="scroll|exitUntilCollapsed">
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_collapseParallaxMultiplier="0.7">
+
+                    <RelativeLayout
+                        android:id="@+id/top_body_layout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:id="@+id/text_view"
+                            android:layout_width="match_parent"
+                            android:layout_height="50dp"
+                            android:gravity="bottom"
+                            android:text="这就是一个textview"
+                            android:textColor="#000"
+                            android:textSize="17dp"
+                            android:visibility="visible" />
+
+                        <EditText
+                            android:id="@+id/edit_text"
+                            android:layout_width="match_parent"
+                            android:layout_height="50dp"
+                            android:background="@null"
+                            android:gravity="bottom"
+                            android:hint="这就是一个textview"
+                            android:textColor="#000"
+                            android:textColorHint="#000"
+                            android:textSize="17dp"
+                            android:visibility="gone" />
+
+                        <Button
+                            android:id="@+id/button"
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
+                            android:layout_alignParentRight="true" />
+
+                    </RelativeLayout>
+                </LinearLayout>
+
+            </android.support.design.widget.CollapsingToolbarLayout>
+
+        </android.support.design.widget.AppBarLayout>
+
+        <FrameLayout
+            android:id="@+id/framlayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+    </android.support.design.widget.CoordinatorLayout>
+
+</RelativeLayout>
